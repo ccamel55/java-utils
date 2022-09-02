@@ -1,7 +1,7 @@
-package tests.EventManager.classes;
+package EventManager.classes;
 
-import tests.EventManager.events.EventBoolean;
-import tests.EventManager.events.EventString;
+import EventManager.events.EventBoolean;
+import EventManager.events.EventString;
 import utils.EventManager.Interfaces.IListenableMethod;
 
 public class SomeClass1 {

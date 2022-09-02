@@ -13,7 +13,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class EventManager {
 
-    public static Map<Class<? extends IEvent>, List<EventListenerMethod>> mRegisteredListeners = new HashMap<>();
+    public static Map<Class<?>, List<EventListenerMethod>> mRegisteredListeners = new HashMap<>();
 
     public static void register(Object object) {
 
@@ -42,7 +42,7 @@ public class EventManager {
     private static void register(Object object, Method method) {
 
         // the first parameter of any listenable method will be the event that will invoke it
-        final var listenerType = (Class<? extends IEvent>)method.getParameterTypes()[0];
+        final var listenerType = method.getParameterTypes()[0];
         final var listenerMethod = new EventListenerMethod(object, method, method.getAnnotation(IListenableMethod.class).bPriority());
 
         if (!mRegisteredListeners.containsKey(listenerType))

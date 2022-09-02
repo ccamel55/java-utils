@@ -1,4 +1,4 @@
-package tests.EventManager.events;
+package EventManager.events;
 
 import utils.EventManager.Interfaces.IEvent;
 

@@ -1,10 +1,10 @@
-package tests.EventManager;
+package EventManager;
 
-import tests.EventManager.classes.SomeClass1;
-import tests.EventManager.classes.SomeClass2;
-import tests.EventManager.events.EventBoolean;
-import tests.EventManager.events.EventString;
 import utils.EventManager.EventManager;
+import EventManager.classes.SomeClass1;
+import EventManager.classes.SomeClass2;
+import EventManager.events.EventBoolean;
+import EventManager.events.EventString;
 
 public class Main {
 
