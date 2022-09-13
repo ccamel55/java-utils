@@ -4,7 +4,7 @@ import org.lwjgl.*;
 import org.lwjgl.glfw.*;
 import org.lwjgl.opengl.*;
 import org.lwjgl.system.*;
-import utils.Rendering.Render2D;
+import utils.Renderer.Renderer2D;
 
 import java.nio.*;
 
@@ -80,25 +80,26 @@ public class Renderer {
         GL.createCapabilities();
         glClearColor(0.2f, 0.2f, 0.2f, 0.2f);
 
-        Render2D.init();
+        Renderer2D.init();
 
         while ( !glfwWindowShouldClose(window) ) {
 
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-            Render2D.beginDraw();
+            Renderer2D.beginDraw();
             {
-                Render2D.testLines(20, 20, 100, 100);
-                Render2D.testRect(130, 20, 100, 100);
-                Render2D.testString(20, 130, "Hello");
+                Renderer2D.testLines(20, 20, 100, 100);
+                Renderer2D.testRect(130, 20, 100, 100);
+                Renderer2D.testString(20, 140, "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z a b c d e f g h i j k l m n o p q r s t u v w x y z 1 2 3 4 5 6 7 8 9 0");
+                Renderer2D.drawFontBitmap(10, 10);
             }
-            Render2D.endDraw();
+            Renderer2D.endDraw();
 
             glfwSwapBuffers(window);
             glfwPollEvents();
         }
 
-        Render2D.destroy();
+        Renderer2D.destroy();
     }
 
     public static void main(String[] args) {
